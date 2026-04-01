@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get an instant quote for roof cleaning, window cleaning, gutter cleaning, fence cleaning, and solar panel cleaning with CV Exterior Solutions.">
+  <title>Instant Quote Calculator | CV Exterior Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="quote">
+  <div class="top-banner">Instant online quote active now. Lock your price before slots fill up.</div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">CV <span>Exterior Solutions</span></a>
+      <button class="mobile-menu-btn" type="button">Menu</button>
+      <nav class="nav-links">
+        <a href="index.html" data-link="home">Home</a>
+        <a href="services.html" data-link="services">Services</a>
+        <a href="reviews.html" data-link="reviews">Reviews</a>
+        <a href="quote.html" data-link="quote">Instant Quote</a>
+        <a href="contact.html" data-link="contact">Contact</a>
+        <a href="quote.html?book=1#quoteForm" class="btn btn-primary">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="section-header">
+      <h1>Instant Quote Calculator</h1>
+      <p>Enter your property details, choose services, and get a smart instant quote in real time.</p>
+      <p class="small-note" id="bookNowFlowNote" style="display:none;"><strong>To book:</strong> build a new quote or pick one from Saved Quotes, then click <strong>Book Now</strong>.</p>
+    </div>
+
+    <div class="quote-layout">
+      <section class="panel">
+        <form id="quoteForm" class="form-grid">
+          <div id="homeSquareFeetGroup">
+            <label for="homeSquareFeet">Home square footage</label>
+            <input id="homeSquareFeet" type="number" min="500" step="100" placeholder="Enter home square footage">
+          </div>
+
+          <div id="windowCountGroup">
+            <label for="windowCount">Number of windows (used for Window Cleaning)</label>
+            <input id="windowCount" type="number" min="1" step="1" placeholder="Enter number of windows">
+          </div>
+
+          <div id="solarPanelCountGroup">
+            <label for="solarPanelCount">Number of solar panels (used for Solar Panel Cleaning)</label>
+            <input id="solarPanelCount" type="number" min="1" step="1" placeholder="Enter number of solar panels">
+          </div>
+
+          <div id="fenceFeetGroup">
+            <label for="fenceFeet">Fence length in feet (used for Fence Cleaning)</label>
+            <input id="fenceFeet" type="number" min="10" step="10" placeholder="Enter fence length in feet">
+          </div>
+
+          <div>
+            <label>Select service(s)</label>
+            <div class="service-select-grid">
+              <label class="service-select-card"><input type="checkbox" name="service" value="roof"><span>Roof Cleaning</span></label>
+              <label class="service-select-card"><input type="checkbox" name="service" value="window"><span>Window Cleaning</span></label>
+              <label class="service-select-card"><input type="checkbox" name="service" value="solar"><span>Solar Panel Cleaning</span></label>
+              <label class="service-select-card"><input type="checkbox" name="service" value="fence"><span>Fence Cleaning</span></label>
+              <label class="service-select-card"><input type="checkbox" name="service" value="gutter"><span>Gutter Cleaning</span></label>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <p class="kicker">Estimated Total</p>
+        <p class="total" id="quoteTotal">--</p>
+        <ul class="breakdown" id="quoteBreakdown"></ul>
+        <div class="transport-note" id="transportDiscountNote"></div>
+        <div class="addon-offers" id="addonOffers"></div>
+        <div class="hero-actions" style="margin-top: 1rem;">
+          <a href="#" class="btn btn-primary" id="lockPriceBtn">Lock in this price</a>
+          <a href="booking.html" class="btn btn-secondary" id="bookNowBtn">Book Now</a>
+        </div>
+      </section>
+    </div>
+
+    <section class="section panel">
+      <h2>Saved Quotes Dashboard</h2>
+      <p class="small-note">Bonus feature: save your quotes on this device and come back anytime.</p>
+      <div class="services-grid" id="savedQuotes"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Need help? Text for a fast quote: <strong data-phone>407-906-9903</strong></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
